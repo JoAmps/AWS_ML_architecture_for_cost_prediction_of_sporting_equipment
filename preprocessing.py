@@ -3,7 +3,7 @@ import numpy as np
 
 def read_dataset(path):
     df=pd.read_csv(path)
-    df=df.drop(columns=df.filter(like='Unnamed'))
+    
     return df
 
 def datetime(df):
@@ -32,17 +32,20 @@ def scale_outliers(df):
 def drop(df):
     df=df[df['sporting_equipment']!='unknown']
     df=df.drop(columns=['day','month','Date'])
-    print(df.head())
+    df=df.drop(columns=df.filter(like='Unnamed'))
+    #print(df.head())
     return df
 
-if __name__=='__main__':
-    df=read_dataset('costs.csv')
-    df=datetime(df)    
-    season_list = []
-    for month in df['month']:
-        season = find_season(month)
-        season_list.append(season)
-    df['seasons'] = season_list
-    df=create_weekday(df)
-    df=scale_outliers(df)
-    df=drop(df)
+    
+
+#if __name__=='__main__':
+  #  df=read_dataset('costs.csv')
+  #  df=datetime(df)    
+  #  season_list = []
+   # for month in df['month']:
+   #     season = find_season(month)
+   #     season_list.append(season)
+   # df['seasons'] = season_list
+   # df=create_weekday(df)
+  #  df=scale_outliers(df)
+   # df=drop(df)
