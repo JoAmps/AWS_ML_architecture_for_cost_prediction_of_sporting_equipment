@@ -35,17 +35,3 @@ def drop(df):
     df=df.drop(columns=df.filter(like='Unnamed'))
     #print(df.head())
     return df
-
-    
-
-#if __name__=='__main__':
-  #  df=read_dataset('costs.csv')
-  #  df=datetime(df)    
-  #  season_list = []
-   # for month in df['month']:
-   #     season = find_season(month)
-   #     season_list.append(season)
-   # df['seasons'] = season_list
-   # df=create_weekday(df)
-  #  df=scale_outliers(df)
-   # df=drop(df)
