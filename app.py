@@ -66,7 +66,7 @@ def run():
     }
 
     if st.button("Predict"):
-        response = requests.post("http://127.0.0.1:8080/predict", json=data)
+        response = requests.post("https://dhnqhr011c.execute-api.us-east-1.amazonaws.com/test/cost-prediction-sporting-equipment", json=data)
         prediction = response.text
         st.success(f"The estimated amount of money to be spent is : {prediction}")
 
