@@ -21,12 +21,14 @@ def one_hot_encode(df):
     df=pd.get_dummies(df)
     return df
 
-def train_model(X_train, y_train, X_test, y_test):
+def train_model(X_train, y_train):
     model = LGBMRegressor(random_state=0)
     model.fit(X_train, y_train)
-    predictions = model.predict(X_test)
-    print(predictions)
     return model
+
+def predict(X_test, model):
+    predictions = model.predict(X_test)
+    return predictions
 
 
 #def evaluate_model(y_test, predictions):

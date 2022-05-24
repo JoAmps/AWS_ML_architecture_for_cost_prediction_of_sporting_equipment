@@ -5,7 +5,7 @@ from preprocessing import datetime, read_dataset, find_season, create_weekday, s
 import os
 from joblib import dump
 import json
-from model_process import split_data, one_hot_encode, train_model#, evaluate_model
+from model_process import split_data, one_hot_encode, train_model, predict
 
 
 if __name__ == '__main__':
@@ -25,5 +25,6 @@ if __name__ == '__main__':
     X_valid=one_hot_encode(X_valid)
     X_test=one_hot_encode(X_test)
 
-    model= train_model(X_train, y_train, X_test, y_test)
+    model= train_model(X_train, y_train)
     dump(model, 'model.joblib')
+
