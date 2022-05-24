@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from preprocessing import datetime, read_dataset, find_season, create_weekday, scale_outliers, drop
 from joblib import dump
-from model_process import split_data, one_hot_encode, train_model, predict
+from model_process import split_data, one_hot_encode, train_model
 
 
 if __name__ == '__main__':
