@@ -2,9 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from preprocessing import datetime, read_dataset, find_season, create_weekday, scale_outliers, drop
-import os
 from joblib import dump
-import json
 from model_process import split_data, one_hot_encode, train_model, predict
 
 
